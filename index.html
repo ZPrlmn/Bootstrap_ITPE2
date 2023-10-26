@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 5 Example</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.15.0/font/bootstrap-icons.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
 </head>
 
 <style>
@@ -25,6 +24,14 @@
     border: solid 1px black;
     border-radius: 20px;
   }
+
+
+  .modal{
+    width: 25%;
+    margin-left: 37.5%;
+  }
+
+
 
 </style>
 
@@ -48,13 +55,53 @@
             </form>
         </li>
       </ul>
+      <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#addProduct">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+        Add Product
+      </button>
 
-  <button type="button" class="btn btn-primary">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
-      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
-    </svg>
-    Cart
-  </button>
+      <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add a Product</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <input class="form-control" id="exampleFormControlInput1" placeholder="Product Name">
+              </div> 
+              <div class="input-group mb-3">
+                <span class="input-group-text">Descriptions</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+              </div>
+              <div class="mb-3">
+                <label for="formFile" class="form-label">Product Image</label>
+                <input class="form-control" type="file" id="formFile">
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary m-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+          <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+        </svg>
+        Cart
+      </button>
   
     </div>
   </div>
@@ -167,18 +214,233 @@
     <div class="row row-cols-auto">
         <div class="card">
           
-          <img class="card-img-top mt-3" src="images/img1CE.jpg" alt="Card image cap">
+          <img class="card-img-top mt-3" src="images/images1navy.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Hoddie Jacket for Men</h5>
-            <p class="card-text"><p class="fw-bold">Color:</p>Light Grey / Maroon / Yellow / Green / Pink /Beige</p>
-            <p class="card-text"><p class="fw-bold">Size:</p>M / L / XL / XXL</p>
+            <h5 class="card-title">Adicolor Classics Trefoil Tee</h5>
+            <p class="card-text"><p class="fw-bold">Color:</p>Navy / Gray / White</p>
+            <p class="card-text"><p class="fw-bold">Size:</p>M / L / XL</p>
             <p class="fw-bold">Price</p>
-            <p class="bg-dark text-light text-center w-25 rounded">₱200</p>
-            <button class="btn border-success text-success" type="button">
+            <p class="bg-dark text-light text-center w-25 rounded">₱1,260</p>
+            <button class="btn border-success text-success" type="button" data-bs-toggle="modal" data-bs-target="#option1">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
               </svg>
               Add To Cart</button>
+
+              <div class="modal fade" id="option1" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal2">Hoodie Jacket for Men</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div id="carouselOption1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="images/images1navy.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/images1gray.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/images1white.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselOption1" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselOption1" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+
+                      <form>
+                        <label>Choose Color:</label>
+                        <select class="btn btn-light">
+                          <option>Navy</option>
+                          <option>Gray</option>
+                          <option>White</option>
+                        </select>
+                      </form>
+                      <form>
+                        <label>Choose Size</label>
+                        <select class="btn btn-light">
+                          <option>M</option>
+                          <option>L</option>
+                          <option>XL</option>
+                          <option>XXL</option>
+                        </select>   
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn border-danger" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn border-success">Add to Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <button class="btn border-primary text-primary" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          
+          <img class="card-img-top mt-3" src="images/images2black.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">HIIT Workout 3-Stripes Tee</h5>
+            <p class="card-text"><p class="fw-bold">Color:</p>Black / Silver / Yellow</p>
+            <p class="card-text"><p class="fw-bold">Size:</p>M / L / XL</p>
+            <p class="fw-bold">Price</p>
+            <p class="bg-dark text-light text-center w-25 rounded">₱2,200</p>
+            <button class="btn border-success text-success" type="button" data-bs-toggle="modal" data-bs-target="#option2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg>
+              Add To Cart</button>
+
+              <div class="modal fade" id="option2" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal2">HIIT Workout 3-Stripes Tee</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div id="carouselOption2" class="carousel slide" data-bs-ride="carouse2">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="images/images2black.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/images2silver.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/images2yellow.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselOption2" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselOption2" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+
+                      <form>
+                        <label>Choose Color:</label>
+                        <select class="btn btn-light">
+                          <option>Black</option>
+                          <option>Silver</option>
+                          <option>Yellow</option>
+                        </select>
+                      </form>
+                      <form>
+                        <label>Choose Size</label>
+                        <select class="btn btn-light">
+                          <option>M</option>
+                          <option>L</option>
+                          <option>XL</option>
+                        </select>   
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn border-danger" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn border-success">Add to Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <button class="btn border-primary text-primary" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          
+          <img class="card-img-top mt-3" src="images/images3orange.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Adicolor Neuclassics Tee</h5>
+            <p class="card-text"><p class="fw-bold">Color:</p>Orange / Blue / Black</p>
+            <p class="card-text"><p class="fw-bold">Size:</p>M / L / XL</p>
+            <p class="fw-bold">Price</p>
+            <p class="bg-dark text-light text-center w-25 rounded">₱2,500</p>
+            <button class="btn border-success text-success" type="button" data-bs-toggle="modal" data-bs-target="#option3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg>
+              Add To Cart</button>
+
+              <div class="modal fade" id="option3" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal2">Adicolor Neuclassics Tee</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div id="carouselOption3" class="carousel slide" data-bs-ride="carouse2">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="images/images3orange.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/images3blue.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/images3black.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselOption3" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselOption3" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+
+                      <form>
+                        <label>Choose Color:</label>
+                        <select class="btn btn-light">
+                          <option>Orange</option>
+                          <option>Blue</option>
+                          <option>Black</option>
+                        </select>
+                      </form>
+                      <form>
+                        <label>Choose Size</label>
+                        <select class="btn btn-light">
+                          <option>M</option>
+                          <option>L</option>
+                          <option>XL</option>
+                          <option>XXL</option>
+                        </select>   
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn border-danger" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn border-success">Add to Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <button class="btn border-primary text-primary" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
                 <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
@@ -187,53 +449,14 @@
           </div>
         </div>
 
-        <div class="card">
-          
-          <img class="card-img-top mt-3" src="images/img2CE.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Designed Hoodie</h5>
-            <p class="card-text"><p class="fw-bold">Color:</p>Light Grey / Maroon / Yellow / Green / Pink /Beige</p>
-            <p class="card-text"><p class="fw-bold">Size:</p>M / L / XL / XXL</p>
-            <p class="fw-bold">Price</p>
-            <p class="bg-dark text-light text-center w-25 rounded">₱200</p>
-            <button class="btn border-success text-success" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
-              Add To Cart</button>
-            <button class="btn border-primary text-primary" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-              </svg>
-            </button>
-          </div>
-        </div>
 
-        <div class="card">
-          
-          <img class="card-img-top mt-3" src="images/img3CE.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Sweater Men</h5>
-            <p class="card-text"><p class="fw-bold">Color:</p>Light Grey / Maroon / Yellow / Green / Pink /Beige</p>
-            <p class="card-text"><p class="fw-bold">Size:</p>M / L / XL / XXL</p>
-            <p class="fw-bold">Price</p>
-            <p class="bg-dark text-light text-center w-25 rounded">₱200</p>
-            <button class="btn border-success text-success" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
-              Add To Cart</button>
-            <button class="btn border-primary text-primary" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-              </svg>
-            </button>
-          </div>
-        </div>
+
 
     </div>
 
   </div>
+
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
